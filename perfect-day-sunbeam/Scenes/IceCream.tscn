@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cbjw3nnlvtxmi"]
 
-[ext_resource type="Texture2D" uid="uid://3mcdsd0t1wmt" path="res://Sprites/Square.png" id="1_5sti4"]
 [ext_resource type="Script" uid="uid://diyvpgw8nqk6p" path="res://Scripts/IceCream.cs" id="1_rf658"]
+[ext_resource type="Texture2D" uid="uid://cjmoxqqei82yy" path="res://Sprites/icecream.png" id="2_vqgnw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpatk"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_knchs"]
+radius = 12.0415945
 
 [node name="IceCream" type="Area2D" unique_id=1583926648]
+scale = Vector2(3, 3)
 script = ExtResource("1_rf658")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446278504]
-modulate = Color(0.88806283, 0.39811957, 0.28219467, 1)
-texture = ExtResource("1_5sti4")
+texture = ExtResource("2_vqgnw")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2072925924]
-shape = SubResource("RectangleShape2D_rpatk")
+shape = SubResource("CircleShape2D_knchs")
 
 [connection signal="body_entered" from="." to="." method="On_Body_Entered"]

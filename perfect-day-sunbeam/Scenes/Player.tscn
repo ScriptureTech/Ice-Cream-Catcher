@@ -11,6 +11,7 @@ size = Vector2(33, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=40164605]
 script = ExtResource("1_kyqiw")
+JumpVelocity = -700.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=70914339]
 modulate = Color(0.6400698, 0, 0.14246255, 1)
