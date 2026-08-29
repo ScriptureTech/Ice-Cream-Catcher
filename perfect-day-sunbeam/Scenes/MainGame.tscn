@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://b0lq0mxr1kis2"]
+[gd_scene format=3 uid="uid://bd4e6pn4r1v43"]
+
+[ext_resource type="PackedScene" uid="uid://doo3e85vkkp3x" path="res://Scenes/Player.tscn" id="1_frf35"]
+[ext_resource type="Texture2D" uid="uid://3mcdsd0t1wmt" path="res://Sprites/Square.png" id="2_yprpe"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_knchs"]
+distance = 16.0
 
 [node name="MainGame" type="Node2D" unique_id=900049532]
+
+[node name="Chunk" type="Node2D" parent="." unique_id=917027108]
+
+[node name="Floor" type="StaticBody2D" parent="Chunk" unique_id=1323885033]
+position = Vector2(560, 495)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chunk/Floor" unique_id=2006864456]
+position = Vector2(22.260052, 0)
+scale = Vector2(36.328754, 1)
+texture = ExtResource("2_yprpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chunk/Floor" unique_id=1604356956]
+shape = SubResource("WorldBoundaryShape2D_knchs")
+
+[node name="Player" parent="." unique_id=40164605 instance=ExtResource("1_frf35")]
+position = Vector2(191, 400)
