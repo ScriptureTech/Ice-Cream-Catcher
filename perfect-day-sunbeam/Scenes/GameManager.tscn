@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqegdc0rssvg1"]
+
+[ext_resource type="Script" uid="uid://iiy8wxcbxvsg" path="res://Scripts/GameManager.cs" id="1_m2tc1"]
+[ext_resource type="PackedScene" uid="uid://b1svca4lolhjy" path="res://Scenes/Chunk.tscn" id="2_bwyv8"]
+
+[node name="GameManager" type="Node" unique_id=1825778099]
+script = ExtResource("1_m2tc1")
+ChunkSpeed = 200.0
+ChunkScene = ExtResource("2_bwyv8")
