@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dxum7gcyswqto" path="res://Scripts/Player.cs" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://3mcdsd0t1wmt" path="res://Sprites/Square.png" id="1_rpqav"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_if208"]
 size = Vector2(32.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpatk"]
+size = Vector2(33, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=40164605]
 script = ExtResource("1_kyqiw")
@@ -17,3 +19,11 @@ texture = ExtResource("1_rpqav")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=282106457]
 position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_if208")
+
+[node name="VirtualHitbox" type="Area2D" parent="." unique_id=1720312984]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VirtualHitbox" unique_id=1184723283]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_rpatk")
+
+[connection signal="area_entered" from="VirtualHitbox" to="." method="On_Hitbox_Entered"]

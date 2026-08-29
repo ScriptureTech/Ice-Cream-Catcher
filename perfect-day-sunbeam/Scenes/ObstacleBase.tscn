@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dnef62yiyh3ko"]
+
+[ext_resource type="Script" uid="uid://cgo66fm1boorn" path="res://Scripts/ObstacleBase.cs" id="1_q5o5k"]
+
+[node name="ObstacleBase" type="Area2D" unique_id=820310578 node_paths=PackedStringArray("ObstacleSprite")]
+script = ExtResource("1_q5o5k")
+ObstacleSprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1799145177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=553280591]

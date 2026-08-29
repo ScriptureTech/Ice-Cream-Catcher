@@ -24,4 +24,12 @@ public partial class Player : CharacterBody2D
 			Velocity = new Godot.Vector2(Velocity.X, JumpVelocity);
 		}
 	}
+
+	public void On_Hitbox_Entered(Area2D area)
+	{
+		if(area is ObstacleBase obstacle)
+		{
+			GameManager.Instance.Score -= obstacle.ScoreLossValue;
+		}
+	}
 }

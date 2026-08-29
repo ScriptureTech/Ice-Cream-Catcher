@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public partial class GameManager : Node
 {
 	[Export]
+	public Label ScoreLabel;
+
+	[ExportCategory("Chunk settings")]
+	[Export]
 	public float ChunkSpeed = 50.0f;
 
 	[Export]
@@ -13,6 +17,10 @@ public partial class GameManager : Node
 	[Export]
 	public PackedScene ChunkScene;
 
+	[Export]
+	public Godot.Collections.Array<PackedScene> ValidObstalces;
+
+	[ExportCategory("Misc Settings")]
 	[Export]
 	public PackedScene IceCreamScene;
 
@@ -65,5 +73,6 @@ public partial class GameManager : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		ScoreLabel.Text = $"Score: {Score}";
 	}
 }
