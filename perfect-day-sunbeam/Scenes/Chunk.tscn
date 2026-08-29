@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm551"]
 size = Vector2(1152, 169)
 
-[node name="Chunk" type="Node2D" unique_id=1390523405]
+[node name="Chunk" type="Node2D" unique_id=1390523405 node_paths=PackedStringArray("ChunkSprite")]
 script = ExtResource("1_d1eu7")
+ChunkSprite = NodePath("Floor/Sprite2D")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=317993365]
 position = Vector2(560, 495)
@@ -21,12 +22,7 @@ texture = ExtResource("2_bav41")
 position = Vector2(16, 69)
 shape = SubResource("RectangleShape2D_lm551")
 
-[node name="Hitbox" type="Area2D" parent="Floor" unique_id=1852450190]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/Hitbox" unique_id=1151212654]
-position = Vector2(16, 68.5)
-shape = SubResource("RectangleShape2D_lm551")
+[node name="Node2D" type="Node2D" parent="Floor" unique_id=1061747714]
+position = Vector2(16, 20)
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=218806265]
-
-[connection signal="area_entered" from="Floor/Hitbox" to="." method="On_Hitbox_Entered"]
